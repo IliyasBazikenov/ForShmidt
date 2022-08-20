@@ -53,24 +53,23 @@ namespace Lesson3
                 Console.WriteLine("Грустно!");
             }
             //HomeWork
-            NameToInitials("Mihal Terentev");
+            NameToInitials("mihal terentev");
 
         }
 
         static void NameToInitials(string name)
-            
         {
+            //Вариант без массивов
+            string nameToUpper = name.ToUpper();
+            int spaceIndex =  name.IndexOf(' ');
+            Console.WriteLine(nameToUpper.Substring(0,1) + "." + nameToUpper.Substring(spaceIndex+1, 1));
+
+
+            //решение с массивом
             name.ToUpper();
             string[] Initials = name.Split(' ');
             
-            Console.WriteLine (Initials[0].Substring(0,1) + "." + Initials[1].Substring(0, 1));
-
-               
-            
-            
-            
-
-
+            Console.WriteLine (Initials[0][0] + "." + Initials[1][0]);
         }
     }
     
