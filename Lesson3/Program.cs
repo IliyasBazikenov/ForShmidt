@@ -52,11 +52,26 @@ namespace Lesson3
             {
                 Console.WriteLine("Грустно!");
             }
+            //HomeWork
+            NameToInitials("Mihal Terentev");
+
         }
 
         static void NameToInitials(string name)
+            
         {
+            name.ToUpper();
+            string[] Initials = name.Split(' ');
+            
+            Console.WriteLine (Initials[0].Substring(0,1) + "." + Initials[1].Substring(0, 1));
+
+               
+            
+            
+            
+
 
         }
     }
+    
 }
