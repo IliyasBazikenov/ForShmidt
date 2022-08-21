@@ -10,7 +10,7 @@ namespace Lesson2
             /*
              * Виды циклов в с# 
              * 1) for
-             * 2) foeach - не будем трогать пока
+             * 2) foreach - не будем трогать пока
              * 3) while
              * 4) do while
              */
