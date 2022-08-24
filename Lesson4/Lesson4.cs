@@ -66,7 +66,7 @@ namespace Lesson4
             }
 
             Console.WriteLine(sum);
-
+            // Числа в массиве NewArray = [10, 2, 3]
             for (int i = 0; i < newArray.Length; i++)
             {
                 Console.WriteLine(newArray[i]);
