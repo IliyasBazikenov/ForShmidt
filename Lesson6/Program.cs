@@ -24,10 +24,14 @@ namespace Lesson6
         }
 
 
-        static string[] StringToArray()
+        static void StringToArray()
         {
-
-            return null;
+            string soursString = "I love arrays they are my favorite";
+            string[] resultstring = soursString.Split(' ');
+            foreach (string word in resultstring)
+            {
+                Console.Write(word + " ");
+            }
         }
 
         static int[] CountBy(int x, int firstMultiplayers)
