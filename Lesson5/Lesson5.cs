@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Lesson5
 {
@@ -16,14 +17,13 @@ namespace Lesson5
                 if (numbers[i] > limit)
                 {
                     GG = false;
-
                     break;
                 }
-                
-               
             }
             Console.WriteLine(GG);
 
+            //Выебоны по первой задаче в одну строчку
+            Console.WriteLine(!numbers.Any(s => s > limit));
 
             //Найти максимальное значение в массиве
             int[] values = new int[] { 2, 5, 3, 4, 1 };
@@ -31,11 +31,10 @@ namespace Lesson5
             foreach (int value in values)
             {
                 if (resault < value) 
-                resault = value;
-
+                    resault = value;
             }
             Console.WriteLine(resault);
-        }     
+        }
 
         static bool CheckArraySumForLimit(int[] numbers, int limit)
         {
