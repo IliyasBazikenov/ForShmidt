@@ -96,6 +96,8 @@ namespace Lesson6
             * Программа должна выводить слово yes для симметричного массива и слово no для
             * несимметричного.
             */
+
+            //Не правильно! Переделать!
             int[,] symmetry = new int[17, 17];
             bool sym = true;
             for (int i = 0; i < symmetry.GetLength(0); i++)
@@ -118,30 +120,34 @@ namespace Lesson6
             Console.WriteLine();
 
             //Написать в одном Consol.Write два предложения, и каждое с новой строки
-            Console.Write($"Ilya {Environment.NewLine}Shmidt");
+            Console.Write($"Ilya {Environment.NewLine}Shmidt"); // Можно еще через \n\r (для виндоус), \n (для линукс) вместо Environment.NewLine
 
             Console.WriteLine();
 
             //Поменять элементы в двумерном массиве
-
             int[,] elements = new int[,] { { 1, 2, 3 }, { 4, 5, 6 } };
-            int byff;
-            for (int i = 0; i < 1; i++)
+            int buff2;
+            for (int j = 0; j < elements.GetLength(0); j++)
             {
-                for (int j = 0; j < 3; j++)
-                {
-                    byff = elements[i, j];
-                    elements[i, j] = elements[i + 1, j];
-                    elements[i + 1, j] = byff;
-                }
+                buff2 = elements[0, j];
+                elements[0, j] = elements[1, j];
+                elements[1, j] = buff2;
             }
+
+            //напиши универсальный вариант
             Console.WriteLine(elements[0, 0] + " " + elements[0, 1] + " " + elements[0, 2]);
             Console.WriteLine(elements[1, 0] + " " + elements[1, 1] + " " + elements[1, 2]);
 
 
-
             //Дан целочисленный массив В[1..5, 1..5]. Напечатать его левую и правую диагональ
-            int[,] cubes = new int[,] { { 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10 }, { 11, 12, 13, 14, 15 }, { 16, 17, 18, 19, 20 }, { 21, 22, 23, 24, 25 } };
+            int[,] cubes = new int[,] 
+            { 
+                { 10, 20, 30, 40, 50 }, 
+                { 60, 70, 80, 90, 10 }, 
+                { 11, 12, 13, 14, 15 }, 
+                { 16, 17, 18, 19, 20 }, 
+                { 21, 22, 23, 24, 25 } 
+            };
 
             for (int i = 0; i < cubes.GetLength(0); i++)
                 Console.Write(cubes[i, i] + " "); //Левая диагональ
@@ -150,6 +156,11 @@ namespace Lesson6
 
             for (int j = cubes.GetLength(0) - 1, i = 0; j >= 0; j--, i++)
                 Console.Write(cubes[i, j] + " "); //Правая диагональ
+
+            Console.WriteLine();
+
+            for (int i = 0; i < cubes.GetLength(0); i++)
+                Console.Write(cubes[i, cubes.GetLength(0)-1-i] + " ");//Правая диагональ
 
         }
 
