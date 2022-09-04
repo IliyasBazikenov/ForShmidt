@@ -35,6 +35,9 @@ namespace Lesson7
 
             //функция которая вывод на консоль приветствие
             GetHelloToConsole();
+
+            //не много про параметры функции
+            TestMethod(1.5);
         }
 
         private static void GetHelloToConsole()
@@ -67,6 +70,11 @@ namespace Lesson7
             }
 
             return maxNumber;
+        }
+
+        private static void TestMethod(double i, int a = 2) // при указании опциональных параметров важна очередность, параметры с дефолтными значениями указываются в конце 
+        {
+            Console.WriteLine(i + " " + a);
         }
     }
 }
