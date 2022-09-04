@@ -98,23 +98,36 @@ namespace Lesson6
             */
 
             //Не правильно! Переделать!
-            int[,] symmetry = new int[17, 17];
-            bool sym = true;
-            for (int i = 0; i < symmetry.GetLength(0); i++)
+            int[][] symmetry = new int[][]
             {
-                for (int j = 0; j < symmetry.GetLength(0); j++)
-                    if (symmetry[i, j] != symmetry[j, i])
+                new int[]{1, 9, 3},  
+
+                new int[]{2, 4, 4},
+
+                new int[]{3, 4, 1},
+            };
+            bool isSymmetry = true;
+            for (int i = 0; i < symmetry.Length; i++)
+            {
+                for (int j = 0; j < symmetry[i].Length; j++)
+                {
+                    if (symmetry[i][j] != symmetry[j][i])
                     {
-                        sym = false;
+                        isSymmetry = false;
                         break;
                     }
-                if (!sym)
+                }
+                if (!isSymmetry)
                     break;
             }
-            if (sym)
-                Console.Write("yes");
+            if (isSymmetry == true)
+            Console.WriteLine("Yes");
             else
-                Console.Write("no");
+                Console.WriteLine("No");
+               
+            
+          
+
 
 
             Console.WriteLine();
