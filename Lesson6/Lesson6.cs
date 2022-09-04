@@ -98,7 +98,7 @@ namespace Lesson6
             */
 
             //Не правильно! Переделать!
-            int[,] symmetry = new int[17, 17];
+            int[,] symmetry = new int[17, 17]; 
             bool sym = true;
             for (int i = 0; i < symmetry.GetLength(0); i++)
             {
