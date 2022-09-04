@@ -2,7 +2,7 @@
 
 namespace Lesson6
 {
-    internal class Program
+    internal class Lesson6
     {
         static void Main(string[] args)
         {
@@ -24,20 +24,63 @@ namespace Lesson6
             Console.WriteLine();
             StringToArray();
 
+
             //Complete the function which converts a binary number (given as a string) to a decimal number.
+            Console.WriteLine();
+            string a = "1011";
 
-
-
-
+            Console.WriteLine("{0} : двоичная : {1}", a, Convert.ToInt64(a, 2));
 
             //Выведи нечетные элементыв массива
+            int[] numbers = new int[] { 7, 2, 4, 21, 1, };
 
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                if (numbers[i] % 2 != 0)
+                    Console.Write(numbers[i] + " ");
 
+            }
+
+            Console.WriteLine();
+
+            //Сумма всех элементов в массиве
+            int sum = 0;
+
+            for (int i = 0; i < numbers.Length; i++)
+                sum = sum + numbers[i];
+
+            Console.WriteLine(sum);
+            Console.WriteLine();
 
             //Выведи масив в обратном порядке
+            int[] numbers2 = new int[] { 1, 2, 3, 4, };
+            for (int i = numbers2.Length - 1; i >= 0; i--)
+                Console.Write(numbers2[i] + " ");
 
+            Console.WriteLine();
 
             //Поменяй элементы в двух массивах местами
+            string[] strings1 = new string[] { "Sof", "Sam", "Sed" };
+            string[] strings2 = new string[] { "Ted", "Tom", "Terry" };
+            string buff;
+
+            for (int i = 0; i < strings1.Length; i++)
+            {
+                buff = strings1[i];
+                strings1[i] = strings2[i];
+                strings2[i] = buff;
+
+            }
+
+            for (int i = 0; i < strings1.Length; i++)
+                Console.Write(strings1[i] + " ");
+
+            Console.WriteLine();
+
+            for (int i = 0; i < strings2.Length; i++)
+                Console.Write(strings2[i] + " ");
+
+            Console.WriteLine();
 
 
             /*
@@ -53,6 +96,60 @@ namespace Lesson6
             * Программа должна выводить слово yes для симметричного массива и слово no для
             * несимметричного.
             */
+            int[,] symmetry = new int[17, 17];
+            bool sym = true;
+            for (int i = 0; i < symmetry.GetLength(0); i++)
+            {
+                for (int j = 0; j < symmetry.GetLength(0); j++)
+                    if (symmetry[i, j] != symmetry[j, i])
+                    {
+                        sym = false;
+                        break;
+                    }
+                if (!sym)
+                    break;
+            }
+            if (sym)
+                Console.Write("yes");
+            else
+                Console.Write("no");
+
+
+            Console.WriteLine();
+
+            //Написать в одном Consol.Write два предложения, и каждое с новой строки
+            Console.Write($"Ilya {Environment.NewLine}Shmidt");
+
+            Console.WriteLine();
+
+            //Поменять элементы в двумерном массиве
+
+            int[,] elements = new int[,] { { 1, 2, 3 }, { 4, 5, 6 } };
+            int byff;
+            for (int i = 0; i < 1; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    byff = elements[i, j];
+                    elements[i, j] = elements[i + 1, j];
+                    elements[i + 1, j] = byff;
+                }
+            }
+            Console.WriteLine(elements[0, 0] + " " + elements[0, 1] + " " + elements[0, 2]);
+            Console.WriteLine(elements[1, 0] + " " + elements[1, 1] + " " + elements[1, 2]);
+
+
+
+            //Дан целочисленный массив В[1..5, 1..5]. Напечатать его левую и правую диагональ
+            int[,] cubes = new int[,] { { 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10 }, { 11, 12, 13, 14, 15 }, { 16, 17, 18, 19, 20 }, { 21, 22, 23, 24, 25 } };
+
+            for (int i = 0; i < cubes.GetLength(0); i++)
+                Console.Write(cubes[i, i] + " "); //Левая диагональ
+
+            Console.WriteLine();
+
+            for (int j = cubes.GetLength(0) - 1, i = 0; j >= 0; j--, i++)
+                Console.Write(cubes[i, j] + " "); //Правая диагональ
 
         }
 
@@ -72,14 +169,13 @@ namespace Lesson6
             int[] result = new int[firstMultiplayers];
             firstMultiplayers = 0; // кол-во элементов в массиве, обнулил чтобы считать итерации
 
-            for(int i = x; i < int.MaxValue; i++)
+            for (int i = x; i < int.MaxValue; i++)
             {
                 if (i % x == 0) // проверка на кратность
                 {
                     result[firstMultiplayers] = i; // присваиваю кратное число элементу массива
                     firstMultiplayers++; // увеливаю на единицу индекс по которому я обращаюсь к элементам в массиве
                 }
-
                 if (firstMultiplayers == result.Length) // проверка на то что итерации равны длине массива
                     break;
             }
@@ -98,7 +194,6 @@ namespace Lesson6
                     result[result.Length - firstMultiplayers] = i; // присваиваю кратное число элементу массива
                     firstMultiplayers--; // увеливаю на единицу индекс по которому я обращаюсь к элементам в массиве
                 }
-
                 if (firstMultiplayers == 0) // проверка на то что итерации равны длине массива
                     break;
             }
@@ -112,10 +207,11 @@ namespace Lesson6
 
             for (int i = 1; i <= firstMultiplayers; i++)
             {
-                result[i-1] = i*x;
+                result[i - 1] = i * x;
             }
 
             return result;
+
         }
     }
 }
