@@ -124,11 +124,6 @@ namespace Lesson6
             Console.WriteLine("Yes");
             else
                 Console.WriteLine("No");
-               
-            
-          
-
-
 
             Console.WriteLine();
 
