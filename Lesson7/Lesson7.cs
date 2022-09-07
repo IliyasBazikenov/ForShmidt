@@ -42,6 +42,8 @@ namespace Lesson7
             //Метод с необязательными параметром
             TestMethod(1.5); // Здесь по дефолту двойка у второго параметра
             TestMethod(1.5, 4);
+            
+
         }
 
         private static void GetHelloToConsole()
@@ -74,11 +76,13 @@ namespace Lesson7
             }
 
             return maxNumber;
+
         }
 
         private static void TestMethod(double i, int a = 2) // при указании необязательных параметров важна очередность, параметры с дефолтными значениями указываются в конце 
         {
             Console.WriteLine(i + " " + a);
         }
+
     }
 }
