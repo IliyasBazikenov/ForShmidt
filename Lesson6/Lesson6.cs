@@ -97,7 +97,6 @@ namespace Lesson6
             * несимметричного.
             */
 
-            //Не правильно! Переделать!
             int[][] symmetry = new int[][]
             {
                 new int[]{1, 9, 3},  
