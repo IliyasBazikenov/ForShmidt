@@ -43,9 +43,27 @@ namespace Lesson8
 
             ShowAllElementsFifthColumn(ints);
 
-            // Вам будет предоставлен массив и лимит. Вы должны убедиться, что все значения в массиве ниже или равны лимит. Если они есть, верните true. В противном случае верните ложь.
+            Console.WriteLine("....................");
 
-            int[] numbers = new int[] { 1, 2, 3, 4, 5, 6, 7 };
+            ShowAllElementsSecondColumn(ints);
+
+            ShowElementsSecondColumn(ints, 1);
+
+            ReplaceElementFifthLineArray1949(ints, 2);
+
+            ReplaceElementFifthLineArray(ints, 1, 999);
+
+            ReplaceElementSecondColumnArray13(ints, 1);
+
+            ReplaceElementSecondColumnArray(ints, 2, 888);
+
+            SwapTwoElementsArray(ints, 0, 0, 2, 1);
+
+            SumLeftUpElementRightDownElement(ints);
+
+                // Вам будет предоставлен массив и лимит. Вы должны убедиться, что все значения в массиве ниже или равны лимит. Если они есть, верните true. В противном случае верните ложь.
+
+                int[] numbers = new int[] { 1, 2, 3, 4, 5, 6, 7 };
             int limit = 5;
 
             bool result = CompareArrayWithLimit(numbers, limit);
@@ -92,7 +110,7 @@ namespace Lesson8
 
         // D1.5. Дан двумерный массив.Вывести на экран:
         // а) все элементы пятой строки массива;
-        //б) все элементы s-го столбца массива.
+        // б) все элементы s-го столбца массива.
 
         static void ShowAllElementsFifthLine(int[][] ints)
         {
@@ -104,5 +122,87 @@ namespace Lesson8
             for (int i = 0; i < ints.Length; i++)
                 Console.WriteLine(ints[i][4]);
         }
+
+        // D1.6. Дан двумерный массив.Вывести на экран:
+        // а) все элементы второго столбца массива;
+        // б) все элементы m-й строки массива.
+
+          // a
+        static void ShowAllElementsSecondColumn(int[][] ints)
+        {
+            for (int i = 0; i < ints.Length; i++)
+                Console.WriteLine(ints[i][1]);
+        }
+
+          // b
+        static void ShowElementsSecondColumn(int[][] ints, int a) =>
+                Console.WriteLine(ints[a][1]);
+
+        // D1.7. Составить программу:
+        // а) заменяющую значение любого элемента пятой строки двумерного массива числом 1949;
+        // б) заменяющую значение любого элемента двумерного массива числом b.
+
+          // a
+        static void ReplaceElementFifthLineArray1949(int[][] ints, int a, int b = 1949) =>
+            Console.WriteLine(ints[4][a] = b);
+
+          // b
+        static void ReplaceElementFifthLineArray(int[][] ints,int a, int b) =>
+            Console.WriteLine(ints[4][a] = b);
+
+        // D1.8. Составить программу:
+        // а) заменяющую значение любого элемента второго столбца двумерного массива числом 13;
+        // б) заменяющую значение любого элемента двумерного массива числом b.
+
+          // a
+        static void ReplaceElementSecondColumnArray13(int[][] ints, int a, int b = 13) =>
+           Console.WriteLine(ints[a][1] = b);
+
+          // b
+        static void ReplaceElementSecondColumnArray(int[][] ints, int a, int b) =>
+          Console.WriteLine(ints[a][1] = b);
+
+        // D1.9. Дан двумерный массив.Поменять местами:
+        // а) элементы, расположенные в правом верхнем и левом нижнем углах;
+        // б) элементы, расположенные в правом нижнем и левом верхнем углах.
+
+          // a
+        static void SwapRightUpElementAndLeftDownElement(int[][] ints)
+        {
+            int buff = ints[0][ints[0].Length - 1];
+            ints[0][ints[0].Length - 1] = ints[ints.Length - 1][0];
+            ints[ints.Length - 1][0] = buff;
+        }
+        // b
+        static void SwapRightDownElementAndLeftUpElement(int[][] ints)
+        {
+            int buff = ints[ints.Length - 1][ints[0].Length - 1];
+            ints[ints.Length - 1][ints[0].Length - 1] = ints[0][0];
+            ints[0][0] = buff;
+        }
+
+        // D1.10. Составить программу, которая меняет местами два любых элемента двумерного массива.
+
+        static void SwapTwoElementsArray(int[][] ints, int a, int b, int c, int d)
+        {
+            Console.WriteLine(ints[a][b] + " " + ints[c][d]);
+            int buff = ints[a][b];
+            ints[a][b] = ints[c][d];
+            ints[c][d] = buff;
+            Console.WriteLine(ints[a][b] + " " + ints[c][d]);
+        }
+
+        // D1.11. Дан двумерный массив.Найти:
+        // а) сумму элементов, расположенных в левом верхнем и правом нижнем углах;
+        // б) среднее арифметическое элементов, расположенных в четырех углах.
+         
+          // a 
+          static void SumLeftUpElementRightDownElement(int[][] ints)
+          {
+            int a = ints[0][0];
+            int b = ints[ints.Length - 1][ints[0].Length - 1];
+           int result = a + b;
+            Console.WriteLine(result);
+          }
     }
 }
