@@ -199,9 +199,7 @@ namespace Lesson8
           // a 
           static void SumLeftUpElementRightDownElement(int[][] ints)
           {
-            int a = ints[0][0];
-            int b = ints[ints.Length - 1][ints[0].Length - 1];
-           int result = a + b;
+            int result = ints[0][0] + ints[ints.Length][ints[0].Length];
             Console.WriteLine(result);
           }
     }
