@@ -2,14 +2,12 @@
 
 namespace Lesson9
 {
-    internal class Program
+    internal class Lesson9
     {
         static void Main(string[] args)
         {
             //Тема
             //Передача параметров методов по ссылке (ref и out)
-
-
             string[] strArray = { "qwe", "asd" };
             PrintArray(strArray);
 
