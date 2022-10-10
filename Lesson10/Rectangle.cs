@@ -59,7 +59,45 @@ namespace Lesson10
 
         public void Enlarge(int nx, int ny)
         {
-
+            _bottomRight.SetX(_bottomRight.GetX() * nx);
+            _bottomRight.SetY(_bottomRight.GetY() * ny);
         }
+
+        public double GetArea()
+        {
+            return GetLength() * GetWidth();
+        }
+
+        public double GetPerimeter()
+        {
+            return (GetLength() + GetWidth()) * 2;
+        }
+
+        public bool IsInside(int x, int y)
+        {
+            if (x >= _topLeft.GetX() && y >= _topLeft.GetY() && x >= _bottomRight.GetX() && y >= _bottomRight.GetY())
+                return false;
+
+            return true;
+        }
+
+        public bool IsInside(Point2D point)
+        {
+            return IsInside(point.GetX(), point.GetY());
+        }
+
+        public bool IsIntersects(Rectangle rectangle)
+        {
+
+            bool rectangleInside = IsInside(rectangle.GetTopLeft()) || IsInside(rectangle.GetBottomRight()); 
+            bool thisRecInside = rectangle.IsInside(GetTopLeft()) || rectangle.IsInside(GetBottomRight());
+            return rectangleInside || thisRecInside;
+        }
+
+        public bool IsInside(Rectangle rectangle)
+        {
+            return  IsInside(rectangle.GetTopLeft()) && IsInside(rectangle.GetBottomRight());
+        }
+            
     }
 }
