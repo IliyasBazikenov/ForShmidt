@@ -18,33 +18,33 @@ namespace Lesson10
 		{
 		}
 
-		public int getX()
+		public int GetX()
 		{
 			return x;
 		}
 
-		public void setX(int x)
+		public void SetX(int x)
 		{
 			this.x = x;
 		}
 
-		public int getY()
+		public int GetY()
 		{
 			return y;
 		}
 
-		public void setY(int y)
+		public void SetY(int y)
 		{
 			this.y = y;
 		}
 
-		public void moveTo(int newX, int newY)
+		public void MoveTo(int newX, int newY)
 		{
 			x = newX;
 			y = newY;
 		}
 
-		public void moveRel(int dx, int dy)
+		public void MoveRel(int dx, int dy)
 		{
 			x += dx;
 			y += dy;
