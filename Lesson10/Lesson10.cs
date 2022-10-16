@@ -52,7 +52,26 @@ namespace Lesson10
             //Ознакомиться с этим кодом!!
             //НА ДНЯХ СКИНУ ЕЩЕ ДОМАШКУ И НАВЕРНОЕ ДАЖЕ ЛЕКЦИЮ КРУТУЮ!
             //СОСТАВИТЬ СПИСОК ВОПРОСОВ!!!!!!!
-            Rectangle rectangle = new Rectangle(new Point2D(3, 5), new Point2D(4, 6));
+            Rectangle rectangle1 = new Rectangle(new Point2D(0, 3), new Point2D(5, 0));
+            Rectangle rectangle2 = new Rectangle(new Point2D(1, 2), new Point2D(4, 1));
+            Rectangle rectangle3 = new Rectangle(new Point2D(0, 3), new Point2D(5, 0));
+            Rectangle rectangle4 = new Rectangle(new Point2D(6, 3), new Point2D(7, 0));
+
+            bool result = rectangle1.IsInside(rectangle2);
+            bool result2 = rectangle1.IsInside(rectangle3);
+            bool result3 = rectangle1.IsInside(rectangle4);
+
+            Console.WriteLine(result);
+            Console.WriteLine(result2);
+            Console.WriteLine(result3);
+
+            bool result4 = rectangle1.IsIntersects(rectangle2);
+            bool result5 = rectangle1.IsIntersects(rectangle3);
+            bool result6 = rectangle1.IsIntersects(rectangle4);
+
+            Console.WriteLine(result4);
+            Console.WriteLine(result5);
+            Console.WriteLine(result6);
         }
     }
 

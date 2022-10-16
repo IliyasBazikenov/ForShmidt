@@ -89,9 +89,9 @@ namespace Lesson10
         public bool IsIntersects(Rectangle rectangle)
         {
 
-            bool rectangleInside = IsInside(rectangle.GetTopLeft()) || IsInside(rectangle.GetBottomRight()); 
-            bool thisRecInside = rectangle.IsInside(GetTopLeft()) || rectangle.IsInside(GetBottomRight());
-            return rectangleInside || thisRecInside;
+            bool recTopLeftIntersec = _topLeft.GetX() <= rectangle.GetBottomRight().GetX() && _topLeft.GetY() >= rectangle.GetBottomRight().GetY() && _bottomRight.GetX() >= rectangle.GetTopLeft().GetX();
+            bool recBotRightIntersec = _bottomRight.GetX() >= rectangle.GetTopLeft().GetX() && _bottomRight.GetY() <= rectangle.GetTopLeft().GetY() && _bottomRight.GetX() <= rectangle.GetBottomRight().GetX() ; 
+            return recTopLeftIntersec || recBotRightIntersec;
         }
 
         public bool IsInside(Rectangle rectangle)
