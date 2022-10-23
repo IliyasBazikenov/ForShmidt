@@ -58,19 +58,19 @@ namespace Lesson10
 
         public double GetPerimeter()
         {
-           return 2 * _radius * 3.14;
+           return  Math.Pow(_radius, 2) * 3.14;
         }
 
         public bool IsInside(int x, int y)
         {
-            if (x >= _center.GetX() + _radius && x >= _center.GetY() + _radius)
-                return false;
+            if ( _center.GetX() - _radius <= x && x <= _center.GetX() + _radius && _center.GetY() - _radius <= y && y <= _center.GetY() + _radius)
+                return true;
 
-            return true;
+            return false;
         }
         public bool IsInside(Point2D point)
         {
-            if (point >= _center.GetX() + _radius && point >= _center.GetY() + _radius);
+            return IsInside(point.GetX(), point.GetY());
         }
     }
 }

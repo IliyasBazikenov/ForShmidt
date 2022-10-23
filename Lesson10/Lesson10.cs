@@ -41,9 +41,9 @@ namespace Lesson10
             toyota.Move();
             toyota.DoBeepBeep();
 
-            Triangle triangle = new Triangle();
-            triangle.x = 11123;
-            triangle.CalculateLenght();
+            //Triangle triangle = new Triangle();
+            //triangle.x = 11123;
+            //triangle.CalculateLenght();
             // triangle.CalculateHalfPerimetr() так  как метод приватный компилятор будет ругаться
 
             //ДОМАШКА!!! 
@@ -72,7 +72,21 @@ namespace Lesson10
             Console.WriteLine(result4);
             Console.WriteLine(result5);
             Console.WriteLine(result6);
+
+            Circle circle = new Circle(new Point2D(1, 3), 7);
+            Point2D point = new Point2D(2, 2);
+
+            bool result7 = circle.IsInside(point);
+
+            Console.WriteLine(result7);
+
+            Triangle triangle1 = new Triangle(new Point2D(1, 1), new Point2D(1, 5), new Point2D(4, 1));
+
+            bool result8 = triangle1.IsInside(2, 15);
+
+            Console.WriteLine(result8);
         }
+        
     }
 
 
@@ -84,35 +98,35 @@ namespace Lesson10
     // Модификатор доступа может быть у:
     // Класс, структура, метод, поле, конструктор
     //Пример:
-    public class Triangle
-    {
-        public int x;
-        private int y;
-        protected int z;
-        private Square square;
+    //public class Triangle
+    //{
+    //    public int x;
+    //    private int y;
+    //    protected int z;
+    //    private Square square;
 
-        private class Square
-        {
-            public int x;
-            private int y;
-            protected int z;
-            private int v;
-        }
+    //    private class Square
+    //    {
+    //        public int x;
+    //        private int y;
+    //        protected int z;
+    //        private int v;
+    //    }
 
-        //если не указывать модификатор доступа для полей и методов то они по дефолту private
-        //если не указывать модификатор доступа для класса то он по дефолту internal
-        public int CalculateLenght()
-        {
-            return x + y + z;
-        }
+    //    //если не указывать модификатор доступа для полей и методов то они по дефолту private
+    //    //если не указывать модификатор доступа для класса то он по дефолту internal
+    //    public int CalculateLenght()
+    //    {
+    //        return x + y + z;
+    //    }
 
 
-        //Приватный метод закрыт для доступа вне класса
-        private int CalculateHalfPerimetr()
-        {
-            return (x + y + z) / 2;
-        }
-    }
+    //    //Приватный метод закрыт для доступа вне класса
+    //    private int CalculateHalfPerimetr()
+    //    {
+    //        return (x + y + z) / 2;
+    //    }
+    //}
 
     class Car
     {
