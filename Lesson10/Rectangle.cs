@@ -31,15 +31,9 @@ namespace Lesson10
 
         public Point2D GetBottomRight() => _bottomRight;
 
-        public void SetTopLeft(Point2D topLeft)
-        {
-            _topLeft = topLeft;
-        }
+        public void SetTopLeft(Point2D topLeft) => _topLeft = topLeft;
 
-        public void SetBottomRight(Point2D bottomRight)
-        {
-            _bottomRight = bottomRight;
-        }
+        public void SetBottomRight(Point2D bottomRight) => _bottomRight = bottomRight;
 
         public int GetLength()
         {
@@ -60,7 +54,8 @@ namespace Lesson10
         public void Enlarge(int nx, int ny)
         {
             _bottomRight.SetX(_bottomRight.GetX() * nx);
-            _bottomRight.SetY(_bottomRight.GetY() * ny);
+
+            _bottomRight.SetY(_topLeft.GetY() - (GetWidth()*ny));
         }
 
         public double GetArea()
@@ -73,6 +68,7 @@ namespace Lesson10
             return (GetLength() + GetWidth()) * 2;
         }
 
+        //Починить!
         public bool IsInside(int x, int y)
         {
             if (x >= _topLeft.GetX() && y >= _topLeft.GetY() && x >= _bottomRight.GetX() && y >= _bottomRight.GetY())
