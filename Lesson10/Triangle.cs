@@ -83,7 +83,7 @@ namespace Lesson10
 
         public bool IsInside(int x, int y)
         {
-            if (x >= _point1.GetX() && y <= _point2.GetY() || x >= _point2.GetX() && y <= _point3.GetY() || x >= _point3.GetX() && y >= _point1.GetY());
+            if (x >= _point1.GetX() || y <= _point2.GetY() || x >= _point2.GetX() || y <= _point3.GetY() || x >= _point3.GetX() || y >= _point1.GetY());
                 return true;
 
             return false;
