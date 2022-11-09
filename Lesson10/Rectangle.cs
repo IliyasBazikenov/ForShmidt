@@ -68,13 +68,9 @@ namespace Lesson10
             return (GetLength() + GetWidth()) * 2;
         }
 
-        //Починить!
         public bool IsInside(int x, int y)
         {
-            if (x >= _topLeft.GetX() && y >= _topLeft.GetY() && x >= _bottomRight.GetX() && y >= _bottomRight.GetY())
-                return false;
-
-            return true;
+            return _topLeft.GetX() <= x && x <= _bottomRight.GetX() && _bottomRight.GetY() <= y && y <= _topLeft.GetY();
         }
 
         public bool IsInside(Point2D point)

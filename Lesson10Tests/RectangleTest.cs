@@ -146,7 +146,7 @@ namespace Lesson10Tests
         [InlineData(5, 3)]
         public void IsInside_RectanleIsInsideRectanngle_ReturnsTrue(int length, int width)
         {
-            Rectangle rectangle = new Rectangle(new Point2D(1, 3), new Point2D(5, 1));
+            Rectangle rectangle = new Rectangle(new Point2D(0, 3), new Point2D(5, 0));
 
             var result = rectangle.IsInside(new Rectangle(length, width));
 
