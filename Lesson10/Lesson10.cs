@@ -73,7 +73,9 @@ namespace Lesson10
             Console.WriteLine(result5);
             Console.WriteLine(result6);
 
-            Circle circle = new Circle(new Point2D(1, 3), 7);
+            Console.WriteLine("-----------");
+
+            Circle circle = new Circle(new Point2D(1, 1), 7);
             Point2D point = new Point2D(2, 2);
 
             bool result7 = circle.IsInside(point);
