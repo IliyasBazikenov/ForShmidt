@@ -48,19 +48,20 @@ namespace Lesson10
 
         public double GetSide12()
         {
-            double side12 = (_point2.GetX() - _point1.GetX())^2 + (_point2.GetY() - _point1.GetY())^2;
+            double side12 = (_point2.GetX() - _point1.GetX()) * (_point2.GetX() - _point1.GetX()) + (_point2.GetY() - _point1.GetY()) * (_point2.GetY() - _point1.GetY());
             return Math.Sqrt(Math.Abs(side12));
+
         }
 
         public double GetSide13()
         {
-            double side13 = (_point3.GetX() - _point1.GetX()) ^ 2 + (_point3.GetY() - _point1.GetY()) ^ 2;
+            double side13 = (_point3.GetX() - _point1.GetX()) * (_point3.GetX() - _point1.GetX()) + (_point3.GetY() - _point1.GetY()) * (_point3.GetY() - _point1.GetY());
             return Math.Sqrt(Math.Abs(side13));
         }
 
         public double GetSide23()
         {
-            double side23 = (_point3.GetX() - _point2.GetX()) ^ 2 + (_point3.GetY() - _point2.GetY()) ^ 2;
+            double side23 = (_point3.GetX() - _point2.GetX()) * (_point3.GetX() - _point2.GetX()) + (_point3.GetY() - _point2.GetY()) *(_point3.GetY() - _point2.GetY());
             return Math.Sqrt(Math.Abs(side23));
         }
 
@@ -83,10 +84,7 @@ namespace Lesson10
 
         public bool IsInside(int x, int y)
         {
-            if (x >= _point1.GetX() || y <= _point2.GetY() || x >= _point2.GetX() || y <= _point3.GetY() || x >= _point3.GetX() || y >= _point1.GetY());
-                return true;
 
-            return false;
         }
     }
 }
