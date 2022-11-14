@@ -48,20 +48,20 @@ namespace Lesson10
 
         public double GetSide12()
         {
-            double side12 = (_point2.GetX() - _point1.GetX()) * (_point2.GetX() - _point1.GetX()) + (_point2.GetY() - _point1.GetY()) * (_point2.GetY() - _point1.GetY());
+            double side12 = Math.Pow(_point2.GetX() - _point1.GetX(), 2) + Math.Pow(_point2.GetY() - _point1.GetY(), 2);
             return Math.Sqrt(Math.Abs(side12));
 
         }
 
         public double GetSide13()
         {
-            double side13 = (_point3.GetX() - _point1.GetX()) * (_point3.GetX() - _point1.GetX()) + (_point3.GetY() - _point1.GetY()) * (_point3.GetY() - _point1.GetY());
+            double side13 = Math.Pow(_point3.GetX() - _point1.GetX(), 2) + Math.Pow(_point3.GetY() - _point1.GetY(), 2);
             return Math.Sqrt(Math.Abs(side13));
         }
 
         public double GetSide23()
         {
-            double side23 = (_point3.GetX() - _point2.GetX()) * (_point3.GetX() - _point2.GetX()) + (_point3.GetY() - _point2.GetY()) *(_point3.GetY() - _point2.GetY());
+            double side23 = Math.Pow(_point2.GetX() - _point3.GetX(), 2) + Math.Pow(_point2.GetY() - _point3.GetY(), 2);
             return Math.Sqrt(Math.Abs(side23));
         }
 
@@ -74,7 +74,7 @@ namespace Lesson10
 
         public double GetArea()
         {
-            return Math.Abs((_point2.GetX() - _point1.GetX()) * (_point3.GetY() - _point1.GetY()) - (_point3.GetX() - _point1.GetX()) * (_point2.GetY() - _point1.GetY()))/2;
+            return (double)Math.Abs((_point2.GetX() - _point1.GetX()) * (_point3.GetY() - _point1.GetY()) - (_point3.GetX() - _point1.GetX()) * (_point2.GetY() - _point1.GetY()))/2;
         }
 
         public double GetPerimeter()
@@ -84,7 +84,12 @@ namespace Lesson10
 
         public bool IsInside(int x, int y)
         {
+            Triangle triangleOne = new Triangle(new Point2D(x, y), _point2, _point3);
+            Triangle triangleTwo = new Triangle(_point1, new Point2D(x, y), _point3);
+            Triangle triangleThree = new Triangle(_point1, _point2, new Point2D(x, y));
 
+            double area = triangleOne.GetArea() + triangleTwo.GetArea() + triangleThree.GetArea();
+            return area == GetArea();
         }
     }
 }

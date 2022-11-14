@@ -101,5 +101,15 @@ namespace Lesson10Tests
             Assert.Equal(12, triangle.GetPerimeter());
         }
 
+        [Theory]
+        [InlineData(0, 2)]
+        [InlineData(1, 2)]
+        [InlineData(2, 1)]
+        public void IsInside_PointIsInsideTriangle_ReturnsTrue(int x, int y)
+        {
+            Triangle triangle = new Triangle(new Point2D(0, 0), new Point2D(0, 3), new Point2D(4, 0));
+            bool result = triangle.IsInside(x, y);
+            Assert.True(result);
+        }
     }
 }

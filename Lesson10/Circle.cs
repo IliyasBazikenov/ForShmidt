@@ -17,15 +17,15 @@ namespace Lesson10
 
         public Circle(int xCenter, int yCenter, int radius)
              : this(new Point2D(xCenter, yCenter), radius)
-        {}
+        { }
 
         public Circle(int radius)
             : this(0, 0, radius)
-        {}
+        { }
 
         public Circle()
             : this(0, 0, 1)
-        {}
+        { }
 
         public Point2D GetCenter() => _center;
 
@@ -48,25 +48,23 @@ namespace Lesson10
 
         public void Enlarge(int n)
         {
-            _radius *= n; 
+            _radius *= n;
         }
 
         public double GetArea()
         {
-           return _radius * 3.14;
+            return _radius * 3.14;
         }
 
         public double GetPerimeter()
         {
-           return  2 * _radius * 3.14;
+            return 2 * _radius * 3.14;
         }
 
         public bool IsInside(int x, int y)
         {
-            if ( _center.GetX() - _radius >= x && x <= _center.GetX() + _radius && _center.GetY() - _radius >= y && y <= _center.GetY() + _radius)
-                return true;
-
-            return false;
+            double sectionTooPoint = Math.Sqrt(Math.Abs(Math.Pow(x - _center.GetX(), 2) + Math.Pow(y - _center.GetY(), 2)));
+            return sectionTooPoint <= _radius;
         }
         public bool IsInside(Point2D point)
         {

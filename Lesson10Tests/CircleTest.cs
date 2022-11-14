@@ -92,11 +92,41 @@ namespace Lesson10Tests
 
         [Theory]
         [InlineData(1, 1)]
-        [InlineData(10, 10)]
-        public void IsInside_PointIsInsideCircle_ReturnsFalse(int x, int y)
+        [InlineData(2, 3)]
+        [InlineData(-2, 3)]
+        public void IsInside_PointIsInsideCircle_ReturnsTrue(int x, int y)
         {
             Circle circle = new Circle(new Point2D(0, 0), 4);
             bool result = circle.IsInside(x, y);
+            Assert.True(result);
+        }
+
+        [Theory]
+        [InlineData(4, 5)]
+        [InlineData(-4, 6)]
+        [InlineData(10, 12)]
+        public void IsInside_PointNotIsInsideCircle_ReturnsFalse(int x, int y)
+        {
+            Circle circle = new Circle(new Point2D(0, 0), 4);
+            bool result = circle.IsInside(x, y);
+            Assert.False(result);
+        }
+
+        [Fact]
+        public void IsInside_Point2DIsInsideCircle_ReturnsTrue()
+        {
+            Circle circle = new Circle(new Point2D(0, 0), 4);
+            Point2D point2D = new Point2D(2, 2);
+            bool result = circle.IsInside(point2D);
+            Assert.True(result);
+        }
+
+        [Fact]
+        public void IsInside_Point2DNotIsInsideCircle_ReturnsFalse()
+        {
+            Circle circle = new Circle(new Point2D(0, 0), 4);
+            Point2D point2D = new Point2D(6, 4);
+            bool result = circle.IsInside(point2D);
             Assert.False(result);
         }
     }
