@@ -8,7 +8,6 @@ namespace Lesson11
     {
         public static int GetVowelCount(string str)
         {
-            str = "ASHGFLSAKHkhgfa";
             int count = 0;
             string vowels = ("AaEeIiOoUu");
 
@@ -17,7 +16,6 @@ namespace Lesson11
                     if (str[i] == vowels[j])
                         ++count;
             return count;
-            Console.WriteLine(count);
         }
     }
 }
