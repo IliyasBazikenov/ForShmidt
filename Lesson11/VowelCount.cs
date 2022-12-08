@@ -6,7 +6,7 @@ namespace Lesson11
 {
     internal class VowelCount
     {
-        public static int GetVowelCount(string str)
+        public int GetVowelCount(string str)
         {
             int count = 0;
             string vowels = ("AaEeIiOoUu");

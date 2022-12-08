@@ -18,6 +18,12 @@ namespace Lesson11
             warrior.Move();
             warrior.Atack();
             warrior.AtackWithShield();
+
+
+
+            ColouredTriangles colouredTriangles = new ColouredTriangles();
+            
+            colouredTriangles.GetTriangle();
         }
     }
 }
