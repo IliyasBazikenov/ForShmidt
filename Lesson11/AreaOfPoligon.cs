@@ -8,9 +8,8 @@ namespace Lesson11
     {
         public double AreaOfPolygonInsideCircle(double circleRadius, int numberOfSides)
         {
-            double result = (1/2) * Math.Pow(circleRadius, 2) * (double)numberOfSides * Math.Sin(360/(double)numberOfSides);
-            Math.Round(result, 3);
-            return result;
+            double result = 0.5 * Math.Pow(circleRadius, 2) * numberOfSides * Math.Sin(2 * Math.PI/(double)numberOfSides);
+            return Math.Round(result, 3);
         }
     }
 }

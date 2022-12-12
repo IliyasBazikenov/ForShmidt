@@ -15,7 +15,7 @@ namespace Lesson11tests
         {
             AreaOfPoligon areaOfPoligon = new AreaOfPoligon();
             var result = areaOfPoligon.AreaOfPolygonInsideCircle(radius, numberofside);
-            Assert.Equal(result, area);
+            Assert.Equal(area, result);
         }
     }
 }
